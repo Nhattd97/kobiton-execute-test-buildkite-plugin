@@ -1,3 +1,2 @@
-module github.com/Nhattd97/bitrise-step-kobiton-execute-test
-
+module github.com/Nhattd97/kobiton-execute-test-buildkite-plugin
 go 1.17
