@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kobiton/bitrise-step-kobiton-execute-test/model"
-	"github.com/kobiton/bitrise-step-kobiton-execute-test/utils"
+	"github.com/github.com/Nhattd97/kobiton-execute-test-buildkite-plugin/app/model"
+	"github.com/github.com/Nhattd97/kobiton-execute-test-buildkite-plugin/app/utils"
 )
 
 const MAX_MS_WAIT_FOR_EXECUTION = 1 * 3600 * 1000 // 1 hour in miliseconds
