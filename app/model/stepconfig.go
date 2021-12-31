@@ -27,24 +27,24 @@ type StepConfig struct {
 
 func (stepConfig *StepConfig) Init() {
 
-	stepConfig.kobiUsername = os.Getenv("kobi_username_input")
-	stepConfig.kobiApiKey = os.Getenv("kobi_apikey_input")
-	stepConfig.executorUrl = os.Getenv("executor_url_input")
-	stepConfig.executorUsername = os.Getenv("executor_username_input")
-	stepConfig.executorPassword = os.Getenv("executor_password_input")
-	stepConfig.gitRepoUrl = os.Getenv("git_repo_url_input")
-	stepConfig.gitRepoBranch = os.Getenv("git_repo_branch_input")
-	stepConfig.gitSSHKey = os.Getenv("git_repo_ssh_key_input")
-	stepConfig.kobiAppId = os.Getenv("app_id_input")
-	stepConfig.useCustomDevice, _ = strconv.ParseBool(os.Getenv("use_custom_device_input"))
-	stepConfig.deviceName = os.Getenv("device_name_input")
-	stepConfig.devicePlatformVersion = os.Getenv("device_platform_version_input")
-	stepConfig.devicePlatformName = os.Getenv("device_platform_input")
-	stepConfig.rootDirectory = os.Getenv("root_directory_input")
-	stepConfig.commands = os.Getenv("command_input")
-	stepConfig.waitForExecution, _ = strconv.ParseBool(os.Getenv("wait_for_execution_input"))
+	stepConfig.kobiUsername = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_KOBI_USERNAME")
+	stepConfig.kobiApiKey = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_KOBI_API_KEY")
+	stepConfig.executorUrl = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_EXECUTOR_URL")
+	stepConfig.executorUsername = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_EXECUTOR_USERNAME")
+	stepConfig.executorPassword = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_EXECUTOR_PASSWORD")
+	stepConfig.gitRepoUrl = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_GIT_REPO_URL")
+	stepConfig.gitRepoBranch = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_GIT_REPO_BRANCH")
+	stepConfig.gitSSHKey = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_GIT_REPO_SSH_KEY")
+	stepConfig.kobiAppId = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_APP_ID")
+	stepConfig.useCustomDevice, _ = strconv.ParseBool(os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_USE_CUSTOM_DEVICE"))
+	stepConfig.deviceName = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_DEVICE_NAME")
+	stepConfig.devicePlatformVersion = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_DEVICE_PLATFORM_VERSION")
+	stepConfig.devicePlatformName = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_DEVICE_PLATFORM")
+	stepConfig.rootDirectory = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_ROOT_DIRECTORY")
+	stepConfig.commands = os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_COMMAND")
+	stepConfig.waitForExecution, _ = strconv.ParseBool(os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_WAIT_FOR_EXECUTION"))
 
-	switch os.Getenv("log_type_input") {
+	switch os.Getenv("BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_LOG_TYPE") {
 	case "output":
 		stepConfig.logType = "out"
 	case "error":
