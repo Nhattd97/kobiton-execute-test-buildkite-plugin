@@ -98,15 +98,6 @@ func main() {
 	if reportUrl != "" {
 		log.Println("Report URL: ", reportUrl)
 	}
-	//
-	// --- Step Outputs: Export Environment Variables for other Steps:
-	// You can export Environment Variables for other Steps with
-	//  envman, which is automatically installed by `bitrise setup`.
-	// A very simple example:
-	utils.ExposeEnv("JOB_ID", jobId)
-	utils.ExposeEnv("REPORT_URL", reportUrl)
-	// You can find more usage examples on envman's GitHub page
-	//  at: https://github.com/bitrise-io/envman
 
 	//
 	// --- Exit codes:
