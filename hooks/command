@@ -1,22 +1,25 @@
 #!/bin/bash
 set -euo pipefail
 
-# case $(uname | tr '[:upper:]' '[:lower:]') in
-#   linux*)
-#     export AGENT_OS_NAME=linux
-#     ;;
-#   darwin*)
-#     export AGENT_OS_NAME=osx
-#     ;;
-#   msys*)
-#     export AGENT_OS_NAME=windows
-#     ;;
-#   *)
-#     export AGENT_OS_NAME=notset
-#     ;;
-# esac
+case "$OSTYPE" in
+  linux*)
+    export AGENT_OS_NAME=linux
+    ;;
+  darwin*)
+    export AGENT_OS_NAME=osx
+    ;;
+  msys*)
+    export AGENT_OS_NAME=windows
+    ;;
+  cygwin*)
+    export AGENT_OS_NAME=windows
+    ;;
+  *)
+    export AGENT_OS_NAME=notset
+    ;;
+esac
 
-# echo "$AGENT_OS_NAME"
+echo "$AGENT_OS_NAME"
 
 printf "\n=====================================================================================\n"
 printf "KOBITON EXECUTE TEST PLUGIN"
@@ -41,4 +44,4 @@ export WAIT_FOR_EXECUTION="${BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_WAIT_FOR_EXEC
 export LOG_TYPE="${BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_LOG_TYPE}"
 
 
-$BUILDKITE_PLUGINS_PATH/github-com-Nhattd97-kobiton-execute-test-buildkite-plugin-v1-0-0/build/app_windows
+$BUILDKITE_PLUGINS_PATH/github-com-Nhattd97-kobiton-execute-test-buildkite-plugin-v1-0-0/build/app_${AGENT_OS_NAME}
