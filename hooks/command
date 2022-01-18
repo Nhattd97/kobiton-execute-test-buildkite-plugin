@@ -41,4 +41,4 @@ export WAIT_FOR_EXECUTION="${BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_WAIT_FOR_EXEC
 export LOG_TYPE="${BUILDKITE_PLUGIN_KOBITON_EXECUTE_TEST_LOG_TYPE}"
 
 
-$BUILDKITE_PLUGINS_PATH/github-com-Nhattd97-kobiton-execute-test-buildkite-plugin-v1-0-0/build/app
+$BUILDKITE_PLUGINS_PATH/github-com-Nhattd97-kobiton-execute-test-buildkite-plugin-v1-0-0/build/app_windows
